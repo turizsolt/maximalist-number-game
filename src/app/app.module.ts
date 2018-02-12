@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { MaximalistTableComponent } from './maximalist-table/maximalist-table.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MaximalistTableComponent
   ],
   imports: [
     BrowserModule

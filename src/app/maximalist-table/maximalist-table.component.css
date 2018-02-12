@@ -1,0 +1,57 @@
+#points {
+  font-size: 24px;
+  font-style: italic;
+  text-align: center;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+}
+
+#table {
+}
+
+.right {
+  color: green;
+  font-weight: bold;
+}
+
+.wrong {
+  color: red;
+  font-weight: bold;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  vertical-align: center;
+  font-size: 48px;
+  color: white;
+}
+
+.header {
+  background-color: blue;
+  font-size: 42px;
+}
+
+.cell {
+  background-color: cadetblue;
+}
+
+.clicked {
+  background-color: orangered;
+}
+
+.maximum {
+  background-color: forestgreen;
+}
+
+.clicked.maximum {
+  background-color: chartreuse;
+}

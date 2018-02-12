@@ -1,0 +1,30 @@
+<div id="points">
+  Jó: <span class="right">{{right}}</span>,
+  Rossz: <span class="wrong">{{wrong}}</span>
+</div>
+<div id="table">
+  <table>
+    <tr>
+      <td class="corner-header header"></td>
+      <td #columnHeader *ngFor="let header of columnHeaders; let i=index"
+          (click)="onHeaderClick(i+5, columnHeader)"
+          class="column-header header"
+          [class.clicked]="(i+5)==lastClicked"
+          [class.maximum]="maximum.indexOf(i+5) !== -1">
+        {{header}}
+      </td>
+    </tr>
+    <tr *ngFor="let row of table; let i=index">
+      <td #rowHeader
+          (click)="onHeaderClick(i, rowHeader)"
+          class="row-header header"
+          [class.clicked]="i==lastClicked"
+          [class.maximum]="maximum.indexOf(i) !== -1">
+        {{rowHeaders[i]}}
+      </td>
+      <td *ngFor="let cell of row" class="cell">
+        {{cell}}
+      </td>
+    </tr>
+  </table>
+</div>
