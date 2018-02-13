@@ -97,8 +97,12 @@ export class MaximalistTableService {
     this.resetAll();
   }
 
-  getRightWrong():({right: number, wrong: number}) {
-    return {right: this.right, wrong: this.wrong};
+  getRight():number {
+    return this.right;
+  }
+
+  getWrong():number {
+    return this.wrong;
   }
 
   getTable():number[][] {

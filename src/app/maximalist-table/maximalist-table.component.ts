@@ -20,31 +20,34 @@ export class MaximalistTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.clear();
-    this.table = this.service.getTable();
-    let {right, wrong} = this.service.getRightWrong();
-    this.right = right;
-    this.wrong = wrong;
-    this.maximum = this.service.getMaximum();
-    this.columnHeaders = this.service.getColumnHeaders();
-    this.rowHeaders = this.service.getRowHeaders();
+    this.clear();
   }
 
   onHeaderClick(i:number) {
     if(this.lastClicked === -1) {
-      this.service.selectSolution(i);
-      this.lastClicked = i;
+      this.solve(i);
     } else {
-      this.service.clear();
-      this.table = this.service.getTable();
-      let {right, wrong} = this.service.getRightWrong();
-      this.right = right;
-      this.wrong = wrong;
-      this.maximum = this.service.getMaximum();
-      this.columnHeaders = this.service.getColumnHeaders();
-      this.rowHeaders = this.service.getRowHeaders();
+      this.clear();
 
-      this.lastClicked = -1;
     }
+  }
+
+  private solve(i: number) {
+    this.service.selectSolution(i);
+    this.maximum = this.service.getMaximum();
+    this.right = this.service.getRight();
+    this.wrong = this.service.getWrong();
+    this.lastClicked = i;
+  }
+
+  private clear() {
+    this.service.clear();
+    this.table = this.service.getTable();
+    this.right = this.service.getRight();
+    this.wrong = this.service.getWrong();
+    this.maximum = this.service.getMaximum();
+    this.columnHeaders = this.service.getColumnHeaders();
+    this.rowHeaders = this.service.getRowHeaders();
+    this.lastClicked = -1;
   }
 }
