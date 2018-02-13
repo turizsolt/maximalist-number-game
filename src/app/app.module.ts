@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MaximalistTableComponent } from './maximalist-table/maximalist-table.component';
+import { MaximalistTableService } from './maximalist-table.service';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { MaximalistTableComponent } from './maximalist-table/maximalist-table.co
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [MaximalistTableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
